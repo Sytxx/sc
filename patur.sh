@@ -18,9 +18,9 @@ wget https://wordpress.org/latest.tar.gz
 tar -xvf latest.tar.gz
 cd wordpress
 cp -R * /var/www/html
-wget https://gist.githubusercontent.com/Sytxx/29d7a9a1e96665eb69be3eeb6c4c77de/raw/71b1951bc853bd3b79816450391d660c5d64a9b0/wp-config.php
 rm -rf /var/www/html/index.html
 chmod -R 777 /var/www/html
+wget -O /var/www/html/wp-config.php https://raw.githubusercontent.com/Sytxx/sc/main/wp-config.php
 mysql -u root -p -e "create database wpfatur; create user 'fatur'@'localhost' identified by 'fatur123'; grant all privileges on *.* to 'fatur'@'localhost';"
 CONFIG_FILE="path/to/your/wp-config.php"
 DB_NAME="wpfatur"
